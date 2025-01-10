@@ -1,0 +1,12 @@
+online-farmers-market/
+│
+├── css/
+│   └── styles.css
+├── js/
+│   └── scripts.js
+├── templates/
+│   ├── index.html
+│   ├── farmers.html
+│   └── add-farmer.html
+├── README.md
+└── app.js
