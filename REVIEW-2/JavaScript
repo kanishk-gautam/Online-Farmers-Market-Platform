@@ -1,0 +1,46 @@
+const farmers = [];
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Populate farmers table
+    const farmersTable = document.getElementById("farmersTable");
+    if (farmersTable) {
+        updateFarmersTable();
+    }
+
+    // Add farmer form submission
+    const addFarmerForm = document.getElementById("addFarmerForm");
+    if (addFarmerForm) {
+        addFarmerForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const produce = document.getElementById("produce").value;
+            const price = document.getElementById("price").value;
+
+            if (name && produce && price) {
+                farmers.push({ name, produce, price });
+                alert("Farmer added successfully!");
+                addFarmerForm.reset();
+                window.location.href = "farmers.html";
+            }
+        });
+    }
+});
+
+function updateFarmersTable() {
+    const farmersTable = document.getElementById("farmersTable");
+    farmersTable.innerHTML = "";
+
+    if (farmers.length === 0) {
+        farmersTable.innerHTML = `<tr><td colspan="3" class="text-center">No farmers available</td></tr>`;
+    } else {
+        farmers.forEach((farmer) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${farmer.name}</td>
+                <td>${farmer.produce}</td>
+                <td>${farmer.price}</td>
+            `;
+            farmersTable.appendChild(row);
+        });
+    }
+}
