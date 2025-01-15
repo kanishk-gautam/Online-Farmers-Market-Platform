@@ -68,16 +68,15 @@ OnlineFarmersMarket/
 │   │   ├── MainFrame.java
 │   │   ├── RegisterUser.java
 │   │   └── FarmersList.java
-│
+│   ├── webapp/
+│       ├── index.jsp
+│       ├── farmer.jsp
+│       ├── produce.jsp
+│       └── error.jsp
 ├── resources/
 │   ├── config.properties
 │   ├── messages.properties
 │
-├── webapp/
-│   ├── index.jsp
-│   ├── farmer.jsp
-│   ├── produce.jsp
-│   └── error.jsp
 │
 ├── tests/
 │   ├── FarmerTest.java
